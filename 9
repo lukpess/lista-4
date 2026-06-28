@@ -1,0 +1,26 @@
+/* 9) Crie um programa que leia dois vetores, A e B, de 8 elementos inteiros cada.
+ * O programa deve gerar um terceiro vetor C, onde cada elemento de C é a soma dos
+ * elementos correspondentes de A e B (C[i]=A[i]+B[i]). Exiba o vetor C. */
+
+#include <stdio.h>
+
+void main() {
+    int vetA[8] = {};
+    int vetB[8] = {};
+    int soma;
+
+    printf("Digite o valor do vetor A: "); 
+    for (int i = 0; i < 8; i++) {
+        scanf("%d", &vetA[i]);
+    }
+
+    printf("Digite o valor do vetor B: ");
+    for (int i = 0; i < 8; i++) {
+        scanf("%d", &vetB[i]);
+    }
+
+    for (int i = 0; i < 8; i++) {
+        soma = vetA[i] + vetB[i];
+        printf("Soma = %d\n", soma);
+    }
+}
