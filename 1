@@ -1,0 +1,18 @@
+/*1) Escreva um programa que declare um array para armazenar 4 notas escolares. O
+programa deve pedir para o usuário digitar cada uma das notas, salvá-las no array e, no
+final, exibir todas as notas digitadas e a média aritmética delas.*/
+
+#include <stdio.h>
+void main() {
+    float notas[4] = {};
+    float media;
+        for (int i = 0; i < 4; i++) {
+            scanf("%f", &notas[i]);
+        }
+    media = (notas[0] + notas[1] + notas[2] + notas[3]) / 4;
+
+    for (int i = 0; i < 4; i++) {
+        printf(" as notas digitadas foram: %2.f\n", notas[i]);
+    }
+    printf("Media: %.2f\n", media);
+}
