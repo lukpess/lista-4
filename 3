@@ -1,0 +1,24 @@
+/* 3) Escreva um programa que receba 10 números inteiros do usuário e os armazene em um array.
+ * Em seguida, o programa deve varrer o array para encontrar e mostrar na tela
+ * qual é o maior número digitado e em qual posição (índice) do array ele está.  */
+
+#include <stdio.h>
+
+void main() {
+    int numeros[10] = {};
+    int maiornum = 0, posicao;
+
+    for (int i = 0; i < 10; i++) { //laço de repetição para ler os numeros do usuario
+        printf("digite um numero: ");
+        scanf("%d", &numeros[i]);
+    }
+
+    for (int i = 0; i < 10; i++) {
+        if (numeros[i] > maiornum) {
+            //condição para varrer e ler o maior numero
+            maiornum = numeros[i];
+            posicao = i;
+        }
+    }
+    printf("maior numero: %d, posicao %d", maiornum, posicao);
+}
