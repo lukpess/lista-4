@@ -1,0 +1,26 @@
+/*14) Crie uma função que receba como argumento uma palavra e conte quantas vogais
+ *(a, e, i, o, u) ela possui. O programa deve aceitar tanto vogais
+ *maiúsculas quanto minúsculas. */
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int contaVogal(char nome[50]) {
+    int qtdvogal = 0;
+    for (int i = 0; nome[i] != '\0'; i++) {
+        if (nome[i] == 'a' || nome[i] == 'e' || nome[i] == 'i' || nome[i] == 'o' || nome[i] == 'u' || nome[i] == 'A' || nome[i] == 'E' || nome[i] == 'I' || nome[i] == 'O' || nome[i] == 'U') {
+            qtdvogal++;
+        }
+    }
+    return qtdvogal;
+}
+
+void main() {
+    char nome[50];
+    int resultado;
+    printf("Digite o nome: ");
+    scanf("%[^\n]", nome);
+    resultado = contaVogal(nome);
+    printf("Sao %d vogais\n", resultado);
+}
