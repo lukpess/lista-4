@@ -1,0 +1,32 @@
+/* 6) Crie um programa que preencha um vetor de 15 números inteiros.
+Depois, o programa deve pedir para o usuário digitar um valor qualquer.
+O programa deve buscar esse valor no vetor e informar se ele foi encontrado ou não,
+indicando a posição (índice) onde ele está. */
+
+#include <stdio.h>
+void main() {
+    int vet[15] = {};
+    int numuser = 0;
+    int encontrado = 1;
+    int posicao;
+
+    for (int i = 0; i < 15; i++) {
+        printf("digite um numero: ");
+        scanf("%d", &vet[i]);
+    }
+    printf("digite um numero qualquer: ");
+    scanf("%d", &numuser);
+
+    for (int i = 0; i < 15; i++) {
+        if (numuser == vet[i]) {
+            encontrado++;
+            posicao = i;
+            break;
+        }
+    }
+    if (encontrado)
+        printf("achei, posicao: %d", posicao);
+    else{
+        printf("\n nao achei");
+    }
+}
