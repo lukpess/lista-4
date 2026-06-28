@@ -1,0 +1,31 @@
+/*13) Faça um programa que leia o nome completo de uma pessoa.
+O programa deve exibir esse nome de duas formas:
+Totalmente em letras maiúsculas.
+Totalmente em letras minúsculas.*/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void main() {
+    char nome[100];
+
+    printf("Digite o seu nome: ");
+    fgets(nome, sizeof(nome), stdin);            // ler o nome completo inclusive os espaços
+
+    nome[strcspn(nome, "\n")] = '\0';            //remover o \n que o fgets inclui no final
+
+    int tamanho = strlen(nome);                  //retorna o número de caracteres da string, sem contar o '\0' do final. ex.: lucas, caracteres= 5
+
+    // Exibir em maiúsculas
+    printf("\nEm maiusculo: ");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%c", toupper(nome[i]));          //toupper função em maiusculo
+    }
+
+    // Exibir em minúsculas
+    printf("\nEm minusculo: ");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%c", tolower(nome[i]));          //tolower função em minusculo
+    }
+}
