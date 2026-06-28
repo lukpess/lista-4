@@ -21,7 +21,7 @@ void main() {
                 break;
             }
         }
-        if (!repetido) { //  se NÃO é repetido
+        if (!repetido) { //  se não é repetido
             vet2[tam2] = vet[i];
             tam2++;
         }
