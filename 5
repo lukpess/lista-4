@@ -1,0 +1,33 @@
+* 05) Escreva um programa para declarar e ler um array contendo 5 valores do float.
+ * Seu programa deve trocar o elementos do array de posição. .  */
+
+#include <stdio.h>
+void invertervetor(float arr[], int tamanho) {
+    int i = 0, f = tamanho - 1;
+    float aux;
+        while (i < f) {
+            aux = arr[i];
+            arr[i] = arr[f];
+            arr[f] = aux;
+            i++;
+            f--;
+        }
+}
+
+void main() {
+
+    float arr[5] = {};
+
+    for (int i = 0; i < 5; i++) {
+        printf("digite um numero: ");
+        scanf("%f", &arr[i]);
+    }
+
+    invertervetor(arr, 5);
+
+    printf("\nArray invertido:\n");
+
+    for (int i = 0; i < 5; i++) {
+        printf("%.2f\n", arr[i]);
+    }
+}
