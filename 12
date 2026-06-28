@@ -1,0 +1,25 @@
+/*12) Escreva um programa que peça para o usuário digitar uma frase qualquer. O programa deve calcular e exibir:
+O número total de caracteres da frase (incluindo os espaços em branco).
+Quantas vezes a letra 'a' (ou 'A') aparece na frase. */
+
+#include <stdio.h>
+#include <string.h>
+void main() {
+    char frase[1000];
+    int qtdA = 0; int qtdCaracteres = 0;
+
+    printf("Digite uma frase: ");
+    scanf("%[^\n]", frase);
+
+    for (int i = 0; frase[i] != '\0'; i++) {
+        if (frase[i] == 'a' || frase[i] == 'A') {
+            qtdA++;
+        }
+    }
+    for (int i = 0; frase[i] != '\0'; i++) {
+        if (frase[i] > 0)
+            qtdCaracteres++;
+    }
+    printf("Quantidade de A: %d\n", qtdA);
+    printf("Quantidade de Caracteres: %d\n", qtdCaracteres);
+}
