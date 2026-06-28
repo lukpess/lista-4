@@ -1,0 +1,35 @@
+/*11) Escreva uma função que receba um vetor de inteiros e seu tamanho como argumentos,
+ *ordene o vetor em ordem crescente (do menor para o maior).
+ *Chame essa função na main() e mostre o vetor ordenado. */
+
+#include <stdio.h>
+void crescente(int vet[], int tam) {
+    for (int i = 0; i < tam - 1; i++) {
+        for (int j = 0; j < tam - 1 - i; j++) {
+            if (vet[j] > vet[j + 1]) {
+                int aux = vet[j];
+                vet[j] = vet[j + 1];
+                vet[j + 1] = aux;
+            }
+        }
+    }
+}
+void main() {
+    int vet[100];
+    int tamanho;
+
+    printf("Digite a quantidade de elementos: ");
+    scanf("%d", &tamanho);
+
+    for (int i = 0; i < tamanho; i++) {
+        printf("Digite um numero: ");
+        scanf("%d", &vet[i]);
+    }
+
+    crescente(vet, tamanho);
+
+    printf("Vetor ordenado: ");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d ,", vet[i]);
+    }
+}
