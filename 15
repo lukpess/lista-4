@@ -1,0 +1,35 @@
+/*15) Um palíndromo é uma palavra ou frase que se lê da mesma forma de trás para frente
+ *(desconsiderando os espaços). Escreva um programa que leia uma palavra (ex: "ovo", "radar", "arara")
+ *e informe se ela é ou não um palíndromo.
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int ehPalindromo(char palavra[]) {
+    int inicio = 0;
+    int fim = strlen(palavra) - 1; //retorna o tamanho da string, o último caractere sempre está na posição tamanho - 1
+
+    while (inicio < fim) {
+        if (palavra[inicio] != palavra[fim]) {
+            return 0; // não é palíndromo
+        }
+        inicio++;
+        fim--;
+    }
+    return 1; // é palíndromo
+}
+
+int main() {
+    char palavra[100];
+    printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    if (ehPalindromo(palavra)) {
+        printf("%s eh um palindromo\n", palavra);
+    } else {
+        printf("%s nao eh um palindromo\n", palavra);
+    }
+    return 0;
+}
