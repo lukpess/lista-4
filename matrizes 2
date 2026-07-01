@@ -1,0 +1,30 @@
+/*Exercício 2 - Matrizes
+declare uma matriz 4 x 3 de floats, já com dados (matriz inicializada) e mostre a
+soma dos elementos dessa matriz; */
+
+#include <stdio.h>
+
+int main() {
+    float matriz[4][3] = {
+        {1.5f,  2.0f,  3.7f},
+        {4.2f,  5.5f,  6.1f},
+        {7.8f,  8.0f,  9.3f},
+        {10.4f, 11.6f, 12.9f}
+    };
+
+    float soma = 0.0f;
+    int i, j;
+
+    printf("Matriz:\n"); // Exibe a matriz e calcula a soma
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%6.1f ", matriz[i][j]); //6.1f é o espaço mínimo de 6 caracteres se o número for menor, ele é alinhado à direita com espaços à esquerda
+            soma += matriz[i][j];
+        }
+        printf("\n");
+    }
+
+    printf("\nSoma de todos os elementos: %.2f\n", soma);
+
+    return 0;
+}
