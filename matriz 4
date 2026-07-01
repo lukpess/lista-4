@@ -1,0 +1,49 @@
+/*Escreva um programa que carregue uma matriz 3×4 com números inteiros. O programa
+deve identificar o maior elemento presente na matriz e informar a sua posição exata (linha
+e coluna).*/ 
+
+#include <stdio.h>
+ 
+int main() {
+    int matriz[3][4];
+    int i, j;
+    int maior, linMaior, colMaior;
+ 
+    // Leitura dos elementos
+    printf("Digite os elementos da matriz 3x4:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 4; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+ 
+    // Exibe a matriz
+    printf("\nMatriz 3x4:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 4; j++) {
+            printf("%4d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    // Busca o maior elemento
+    maior    = matriz[0][0];
+    linMaior = 0;
+    colMaior = 0;
+ 
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 4; j++) {
+            if (matriz[i][j] > maior) {
+                maior    = matriz[i][j];
+                linMaior = i;
+                colMaior = j;
+            }
+        }
+    }
+ 
+    printf("\nMaior elemento: %d\n", maior);
+    printf("Posicao: linha %d, coluna %d\n", linMaior, colMaior);
+ 
+    return 0;
+}
