@@ -1,0 +1,67 @@
+/*Desenvolva um programa que leia duas matrizes de inteiros: a matriz A de dimensão
+2×3 e a matriz B de dimensão 3×2. O programa deve calcular e exibir a matriz C, que é o
+resultado da multiplicação de A por B (C=A×B).*/
+
+#include <stdio.h>
+ 
+int main() {
+    int A[2][3], B[3][2], C[2][2]; //numero da linha da mat a tem que ser igual ao numero da coluna da mat b 
+    int i, j, k;
+ 
+    // Leitura de da matriz a
+    printf("Digite os elementos da matriz A (2x3):\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("A[%d][%d]: ", i, j);
+            scanf("%d", &A[i][j]);
+        }
+    }
+ 
+    // Leitura da matriz b
+    printf("\nDigite os elementos da matriz B (3x2):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("B[%d][%d]: ", i, j);
+            scanf("%d", &B[i][j]);
+        }
+    }
+ 
+    // Calcular C = A x B
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            C[i][j] = 0;
+            for (k = 0; k < 3; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+ 
+    // Exibe A
+    printf("\nMatriz A (2x3):\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%6d ", A[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    // Exibe B
+    printf("\nMatriz B (3x2):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%6d ", B[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    // Exibe C
+    printf("\nMatriz C = A x B (2x2):\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%6d ", C[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    return 0;
+}
