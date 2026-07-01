@@ -1,0 +1,50 @@
+/*8. Uma matriz quadrada é considerada simétrica se ela for igual à sua transposta (A=AT).
+Escreva um programa que leia uma matriz 3×3 e verifique se ela é ou não uma matriz
+simétrica.*/
+
+
+#include <stdio.h>
+ 
+#define N 3
+ 
+int main() {
+    int matriz[N][N];
+    int i, j;
+    int simetrica = 1; // assume verdadeiro até encontrar um contra
+ 
+    // Leitura dos elementos
+    printf("Digite os elementos da matriz 3x3:\n");
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+ 
+    // Exibe a matriz
+    printf("\nMatriz 3x3:\n");
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            printf("%6d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    // Verifica simetria
+    for (i = 0; i < N; i++) {
+        for (j = i + 1; j < N; j++) {
+            if (matriz[i][j] != matriz[j][i]) {
+                simetrica = 0;
+            }
+        }
+    }
+ 
+    if (simetrica) {
+        printf("\nA matriz E simetrica (A == A^T).\n");
+    } else {
+        printf("\nA matriz NAO e simetrica.\n");
+    }
+ 
+    return 0;
+}
+ 
