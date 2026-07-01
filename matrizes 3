@@ -1,0 +1,48 @@
+/*Exercício 3: 
+use a matriz do ex2, leia um número e multiplicar cada elemento da matriz por esse
+número e exibir a matriz resultante; */
+
+#include <stdio.h>
+
+int main() {
+    float matriz[4][3] = {
+        {1.5f,  2.0f,  3.7f},
+        {4.2f,  5.5f,  6.1f},
+        {7.8f,  8.0f,  9.3f},
+        {10.4f, 11.6f, 12.9f}
+    };
+
+    
+    float fator;
+    int i, j;
+
+
+    printf("Matriz original:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%6.1f ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    printf("\nDigite o numero que deseja multiplicar a matriz: ");
+    scanf("%f", &fator);
+ 
+    // Multiplica cada elemento pelo fator
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            matriz[i][j] *= fator;
+        }
+    }
+ 
+    // Exibe a matriz resultante
+    printf("\nMatriz multiplicada por %.2f:\n", fator);
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%8.2f ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    return 0;
+}
