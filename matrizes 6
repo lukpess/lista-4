@@ -1,0 +1,48 @@
+/*Faça um programa que leia uma matriz M de dimensão 3×2. Em seguida, o programa
+deve gerar e exibir a sua matriz transposta M'(de dimensão 2×3), onde as linhas de M se
+tornam as colunas de M'.*/
+
+
+#include <stdio.h>
+ 
+int main() {
+    int M[3][2];
+    int Mt[2][3]; // transposta
+    int i, j;
+
+    // Leitura da matriz M
+    printf("Digite os elementos da matriz M (3x2):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("M[%d][%d]: ", i, j);
+            scanf("%d", &M[i][j]);
+        }
+    }
+ 
+    // Calcula a transposta: Mt[j][i] = M[i][j]
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 2; j++) {
+            Mt[j][i] = M[i][j];
+        }
+    }
+ 
+    // Exibe M
+    printf("\nMatriz M (3x2):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%4d ", M[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    // Exibe M transposta
+    printf("\nMatriz transposta M' (2x3):\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%4d ", Mt[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    return 0;
+}
