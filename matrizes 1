@@ -1,0 +1,22 @@
+/* Matrizes:
+1. Faça um programa que declare uma matriz 3 x 2 de números inteiros, leia os elementos da matriz e mostre a matriz; */
+
+#include <stdio.h>
+
+void main() {
+    int matriz[3][2] = {};
+    int linha = 0, coluna = 0;
+
+    for (linha = 0; linha < 3; linha++) {
+        for (coluna = 0; coluna < 2; coluna++) {
+            scanf("%d", &matriz[linha][coluna]);
+        }
+    }
+    for (linha = 0; linha < 3; linha++) {
+        for (coluna = 0; coluna < 2; coluna++) {
+            printf("%d ", matriz[linha][coluna]);
+        }
+        printf("\n");
+    }
+
+}
